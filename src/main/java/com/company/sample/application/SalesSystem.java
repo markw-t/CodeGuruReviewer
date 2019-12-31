@@ -23,8 +23,9 @@ import software.amazon.codeguruprofilerjavaagent.Profiler;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-
+import java.time.ZoneId;
 import java.util.Date;
+import java.util.TimeZone;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SalesSystem {
@@ -52,6 +53,7 @@ public class SalesSystem {
         ListOrderThread listOrderThread = new ListOrderThread();
 
         DateFormat currentDateFormat = new SimpleDateFormat("dd MMM yyyy");
+        currentDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         listOrderThread.setDate(currentDateFormat.format(new Date()));
 
         listOrderThread.start();
