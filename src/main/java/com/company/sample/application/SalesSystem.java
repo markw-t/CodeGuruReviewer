@@ -53,7 +53,8 @@ public class SalesSystem {
         ListOrderThread listOrderThread = new ListOrderThread();
 
         DateFormat currentDateFormat = new SimpleDateFormat("dd MMM yyyy");
-        currentDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+        //remove the necessary line again to see if CG triggers again
+        //currentDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
         listOrderThread.setDate(currentDateFormat.format(new Date()));
 
         listOrderThread.start();
